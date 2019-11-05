@@ -6,12 +6,16 @@ const MovieList = () => {
     const [movies, setMovies] = useContext(MovieContext);
 
     return(
-        <div>
-            {
-                movies.map((movie, index) => (
-                    <Movie key={`movie-${index}`} movie={movie} />
-                ))
-            }
+        <div className="column">
+            <div className="columns">
+                {
+                    movies.map((movie, index) => (
+                        <div className="column">
+                            <Movie key={`movie-${index}`} movie={movie} />
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 }
